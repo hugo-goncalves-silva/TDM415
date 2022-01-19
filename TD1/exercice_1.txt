@@ -1,0 +1,21 @@
+I - Boucles imbriquées
+ 
+1. Combien de fois la méthode bonjour1(5) affiche « Bonjour 1 » ?
+
+Sachant que la méthode va utiliser une boucle n fois et que dans cette boucle une autre boucle est utilisée n fois pour afficher "Bonjour 1", bonjour1(5) affiche 25 fois "Bonjour 1".
+
+2. Combien de fois la méthode bonjour2(5) affiche « Bonjour 2 » ?
+
+Sachant que la méthode ("bonjour2(n)") rentre dans un boucle (qui va jusqu'à n) qui rentre dans une autre boucle (qui ne vas que jusqu'à i (étant l'indice de la 1ère boucle)) pour afficher "Bonjour 2",
+bonjour2(5) affiche 15 fois "Bonjour 2".
+
+3.Combien de fois la méthode bonjour1(n) affiche « Bonjour 1 » ? Exprimez la réponse
+en fonction de n.
+
+La méthode bonjour1(n) va afficher n*n fois « Bonjour 1 ».
+
+4. Combien de fois la méthode bonjour2(n) affiche « Bonjour 2 » ? Exprimez la réponse
+en fonction de n.
+
+La méthode bonjour2(n) va afficher la somme de 1 à n.
+
