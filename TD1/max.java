@@ -1,7 +1,7 @@
 package TD1;
 
 
-public class exercice_4{
+public class max{
 
 
 public static int max (int[] tab){
@@ -14,6 +14,7 @@ public static int max (int[] tab){
     }
     return max;
 }
+
 static void Main(String[] args){
     int[] tab = {3, 6, 15, 21, 30, 33, 35, 40};
     int[] tabNeg = {-3, -6, -15, -21, -30, -33, -35, -40};
@@ -24,6 +25,5 @@ static void Main(String[] args){
     System.out.println("L'indice de la valeur max du tableau positif "+max);
     System.out.println("L'indice de la valeur max du tableau négatif "+maxNeg);    
     System.out.println("L'indice de la valeur max du tableau Mixte "+maxMixt);    
-
 }
 }
