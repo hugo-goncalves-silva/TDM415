@@ -18,4 +18,3 @@ La méthode bonjour1(n) va afficher n*n fois « Bonjour 1 ».
 en fonction de n.
 
 La méthode bonjour2(n) va afficher la somme de 1 à n.
-
