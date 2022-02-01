@@ -1,0 +1,59 @@
+Notations asymptotiques
+
+    1. Application des définitions du cours Notions de complexité (diapositives 8 à 13)
+
+        (a) En utilisant la définition de O montrer que 3n^2 + 4n + 6 = O(n^2)
+
+            On pose C = 13, Alors 3n^2 + 4n +6 < 13n^2 quand n >= 1.
+
+        (b) En utilisant la définition de Omega montrer que 3n^2 + 4n + 6 = Omega(n^2)
+
+            On sait qu'il existe C et n0, tel que 3n^2 + 4n +6 > Cn^2 quand n >= n0.
+            Or on sait que pour n'importe qu'elle valeur de C comprise dans ]-l'infini;3] Omega(n^2) sera toujours inférieure à g(n)
+
+        (c) En utilisant la définition de Theta montrer que 3n^2 + 4n + 6 = Teta(n^2)
+            
+            Par définition Teta est la valeur la plus grande quand n-> + l'infini donc ici c'est n^2.
+
+    2.Application des propriétés du cours Notions de complexité (diapositive 14)
+    Caractériser les fonctions suivantes en termes de notation Θ :
+    
+        (a) 2^1024 + 5n^8 + 2087n^7
+            
+            2^1024 + 5n^8 + 2087n^7 = Theta(5n^8) car c'est l'élément ayant le plus haut degré de n.
+        
+        (b) 1024n + 2048√5n
+            
+            1024n + 2048√5n =  Theta(1024n) car c'est l'élément qui a le plus haut degré de n.
+
+        (c) 2n^8 + 67898 +(3/2)^9
+
+            2n^8 + 67898 +(3/2)n^9 = Theta((3/2)n^9) car c'est l'élément qui a le plus haut degré de n.
+
+        (d) n^2/3 + 10^100 n
+        
+            (n^2)/3 + (10^100)*n = Theta((n^2)/3) car c'est l'élément qui a le plus haut degré de n.
+        
+        (e) 4 log(5n) + √3n
+
+            4 log(5n) + √3n = Theta(√3n) car la croissance de la fonction racine est supérieure à la croissance de la fonction log et sachant que les 2 ont le même degré de n alors c'est la racine qui prendra le dessus.
+
+        (f) 2n logn + 10√n
+
+            2n logn + 10√n = Theta(2*n*log(n)) car la croissance de la fontion racine est négligeable par rapport à la croissance de 2*n
+
+        (g) 2n* E(2n i=1)(3i + 1) + E(n  p=1) 2^p
+
+            2n* E(2n i=1)(3i + 1) + E(n  p=1) 2^p = Theta(E(n  p=1) 2^p) car c'est l'élément qui a le plus haut degré de n.
+
+    3.Comparer les fonctions suivantes (qui est en O() de qui ?) :
+            (a) 2^n
+            (b) n^n
+            (c) n!
+
+            n^n > n! > 2^n
+
+    4. En utilisant la définition de Theta() montrer que f(n) + g(n) = Theta(max(f(n), g(n))).
+
+
+    
