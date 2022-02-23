@@ -1,0 +1,45 @@
+# Ordonnancement des tâches
+
+1. À votre avis, quelles stratégies gloutonnes (comment a-t-on choisi l’ordre dans lequel les tâches ont été affectées aux machines) ont été utilisées pour les ordonnancements (h) haut et (m) milieu ? Quel algorithme pas forcément glouton pour (b) bas ?
+
+    * Au sujet du premier ordonnancement (h) on a disposé les tâches dans l'ordre dès qu'une machine était disponible. Au sujet du deuxième ordonnancement (m), les tâches ont été choisies selon leur taille, en commançant par les plus petites.
+
+    * Pour celui du bas (b) nous avons fait en sorte que la somme du temps pour accomplir les tâches soit égal pour les 3 machines.
+
+2. Est-ce que l’ordonnancement (b) est optimal ? Pourquoi ?
+
+    * L'ordonnancement (b) me semble optimal car il possède le Makespan le plus faible et que toutes les machines finissent en même temps ce qui signifie qu'elles travaillent toujours sur une tâche jusqu'à la fin.
+
+3. Écrivez en Java un algorithme d’ordonnancement qui vous semble approprié (l’un de ceux que vous avez proposés en réponse à la question 1, ou un différent). Le code sera écrit dans la classe Scheduler.java.
+
+public Schedule scheduleMiddle(int p,TaskSet ts) {
+		Schedule schedule = new Schedule(p);
+		List<Task> tsSorted = ts.asSortedList();
+		HashMap<Integer,List<Task>> map = new HashMap<>();
+		int j=0;
+		for(int i= 0;i<ts.size();i++) {
+			List<Task> intermediaire =  map.get(j);
+			map.put(j,intermediaire.add(tsSorted.get(i)));
+			j++;
+			if(j>=p) {
+				j=0;
+			}
+		}
+		schedule.display();
+		schedule.setTasksMap(map);		
+		return schedule;
+	}
+
+4. Expliquez pourquoi cet algorithme peut être qualifié de « glouton ».
+
+Cet algorithme peut être qualifié de "glouton" car il construit une solution en affectant une tâche à une machine en boucle, sans revenir en arrière et sans prendre en compte les autres tâches. Le tout en optimisant (dans le cas que j'ai choisit) le fait de finir en priorité les tâches les plus rapides.
+
+5. Expliquez dans quels cas votre algorithme résulte en un Makespan optimal. Donnez des exemples du type de ceux de la figure 2.
+
+Notre algorithme serait optimal dans le cas où toutes les tâches ont la même durée.
+
+6. Expliquez dans quels cas votre algorithme résulte en un Makespan « mauvais ». Donnez des exemples du type de ceux de la figure 2
+
+Notre algorithme résulte en un Makespan "mauvais" s'il existe un ecart de durée entre les tâches. Plus la différence de la durée des tâches est grande plus le Makespan sera "Mauvais".
+
+7. Si on suppose maintenant que pour toutes les tâches la durée est soit 2, soit 4. Quel nouvel algorithme proposez-vous ?
