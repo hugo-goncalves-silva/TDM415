@@ -1,0 +1,41 @@
+1. Quelle est la complexité de l’algorithme force brute appliqué à une liste de n objets ? Expliquez votre réponse.
+
+
+
+2. Donner deux algorithmes gloutons simples qui permettent de trouver un rangement (sans forcément garantir la qualité de la solution). Pour chacun de ces algorithmes :
+— dérouler pas à pas l’algorithme sur l’exemple de la figure 1 ;
+— donner un exemple de liste d’objets et de taille de boîte pour lequel l’application de
+l’algorithme conduit à une solution optimale ;
+— donner un autre exemple pour lequel l’application de l’algorithme conduit à une solution excessivement mauvaise.
+
+Mon premier algorithme glouton consisterait à essayer d'additionner des objets dont la somme des hauteur correspondrait à la hauter de la boite.(En supprimant la longueur du plus grand objet de la longueur de la boite)
+-> On prend l'objet 1 de hauteur 6
+-> On vérifie s'il rentre en largeur.
+-> On vérifie quel objet a une taille = ou < à (8(hauteur de la boite) - 6)
+-> On prend l'objet 8 de hauteur 2
+-> On vérifie s'il rentre en largeur.
+-> On vérifie si on peut encore en empiler (6+2 >= 8 donc non)
+
+-> On les empile et on décale les limites de la boite à la longueur du plus large des deux objets.(ici l'objet 8 est le plus long à 5 unitées).
+
+-- Pour des objets dont la hauteur est paire et qui ont tous la même longueur. Pour une boite avec les mêmes attributs.
+-- Des objets avec des longueurs dont l'écart est trop important. Cela va créer des trous qu'on pourrai remplir mais dont notre algorithme ne prend pas en compte.
+
+Mon deuxième algorithme glouton consisterait à faire comme pour le premier mais cette fois ci en prenant la largeur.(En supprimant la hauteur du plus grand objet de la hauteur de la boite)
+-> On prend l'objet 1 de longueur 4
+-> On vérifie s'il rentre en hauteur.
+-> On vérifie quel objet a une longueur = ou < à (10(hauteur de la boite) - 4 )
+-> On prend l'objet 2 de longueur 4
+-> On vérifie s'il rentre en hauteur.
+-> On vérifie si on peut encore en aligner (4+4 >= 10 donc oui)
+-> On vérifie quel objet a une longueur = ou < à (10(hauteur de la boite) - 8 )
+-> On prend l'objet 7 de longueur 1
+-> On vérifie s'il rentre en hauteur.
+-> On vérifie si on peut encore en aligner (4+4+1 >= 10 donc oui)
+-> Il n'y a pas d'autres objets de longueur 1, donc on les aligne et on diminue la hauteur de la boite de la hauteur du plus grand objet.(ici c'est l'objet 1)
+
+
+-- Pour des objets dont la longueur est paire et qui ont tous la même hauteur. Pour une boite avec les mêmes attributs.
+-- Des objets avec des hauteurs dont l'écart est trop important. Cela va créer des trous qu'on pourrai remplir mais dont notre algorithme ne prend pas en compte.
+
+3. Proposer une heuristique plus complexe (non gloutonne) dans laquelle à chaque étape on essaye d’améliorer la solution courante. Donner un exemple d’application
